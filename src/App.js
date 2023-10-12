@@ -13,11 +13,15 @@ const App = () => {
       
       if(editId){
         const editTodo = todos.find((i)=> i.id === editId);
+        
         const updataTodos = todos.map((t)=>
           t.id===editTodo.id
            ? (t = {id:t.id, todo})
            : {id:t.id, todo:t.todo}
         );
+      //       const updataTodos = todos.map((item) =>
+      //   item.id === editTodo.id ? (item = { id: item.id, todo }) : item
+      // )
         setTodos(updataTodos)
         seteditId(0);
         setTodo("");
